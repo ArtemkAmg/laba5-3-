@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математичні функції й константи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .item {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Математичні функції й константи</h1>
+    <div class="content" id="constants"></div>
+    <div class="content" id="functions"></div>
+    <div class="content" id="random"></div>
+
+    <script>
+        // Константи
+        const constants = [
+            { name: "Константа е", value: Math.E },
+            { name: "Константа π", value: Math.PI },
+            { name: "Десятковий логарифм постійної Ейлера (е)", value: Math.LOG10E },
+            { name: "Двійковий логарифм постійної Ейлера (е)", value: Math.LOG2E },
+            { name: "Натуральний логарифм числа 10", value: Math.LN10 },
+            { name: "Натуральний логарифм числа 2", value: Math.LN2 },
+            { name: "Корінь квадратний із двох", value: Math.SQRT2 },
+            { name: "Корінь квадратний з однієї другої", value: Math.SQRT1_2 }
+        ];
+
+        const constantsContainer = document.getElementById('constants');
+        constantsContainer.innerHTML = "<h2>Константи</h2>";
+        constants.forEach(constant => {
+            constantsContainer.innerHTML += `<div class="item">${constant.name}: ${constant.value}</div>`;
+        });
+
+        // Номер варіанту
+        const N = 1;
+
+        // Функції за номером варіанту
+        const functions = [
+            { name: "Результат зведення в степінь 4^2", value: Math.pow(4, 2) },
+            { name: "Результат добування квадратного кореня з 4", value: Math.sqrt(4) },
+            { name: "Результат добування квадратного кореня з -9", value: Math.sqrt(-9) },
+            { name: "Результат обчислення модуля |-9|", value: Math.abs(-9) },
+            { name: "Результат обчислення синуса 0", value: Math.sin(0) },
+            { name: "Результат обчислення косинуса 0", value: Math.cos(0) },
+            { name: "Результат обчислення тангенса 0", value: Math.tan(0) },
+            { name: "Результат обчислення арксинуса 0", value: Math.asin(0) },
+            { name: "Результат обчислення арккосинуса 0", value: Math.acos(0) },
+            { name: "Результат обчислення арктангенса 0", value: Math.atan(0) },
+            { name: "Результат обчислення експоненти (e^1)", value: Math.exp(1) },
+            { name: "Результат обчислення натурального логарифма (ln(1))", value: Math.log(1) },
+            { name: "Результат обчислення логарифма по основі 10 (log10(1))", value: Math.log10(1) },
+            { name: "Результат обчислення логарифма по основі 2 (log2(1))", value: Math.log2(1) },
+            { name: "Результат обчислення гіперболічного синуса (sinh(1))", value: Math.sinh(1) },
+            { name: "Результат обчислення гіперболічного косинуса (cosh(1))", value: Math.cosh(1) }
+        ];
+
+        const functionSubset = functions.slice(N - 1, N + 4);
+        const functionsContainer = document.getElementById('functions');
+        functionsContainer.innerHTML = "<h2>Функції</h2>";
+        functionSubset.forEach(func => {
+            functionsContainer.innerHTML += `<div class="item">${func.name}: ${func.value}</div>`;
+        });
+
+        // Генератор випадкових чисел
+        const randomNumber = Math.random();
+        const randomContainer = document.getElementById('random');
+        randomContainer.innerHTML = "<h2>Генератор випадкових чисел</h2>";
+        randomContainer.innerHTML += `<div class="item">Випадкове число в інтервалі [0;1]: y = ${randomNumber}</div>`;
+    </script>
+</body>
+</html>
+
